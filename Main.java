@@ -17,7 +17,7 @@ public class Main {
             System.out.println("    6. Update Data");
             System.out.println("    7. Delete Data");
             System.out.println("    8. Exit");
-            System.out.println("Enter your choice: ");
+            System.out.print("Enter your choice: ");
 
             select = scanner.nextInt();
             scanner.nextLine();
