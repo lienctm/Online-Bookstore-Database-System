@@ -20,4 +20,13 @@ public class Book {
         this.rent_price = rentPrice;
     }
 
+    @Override
+    public String toString() {
+        return bookID + " | " + title + " | " + author
+                + " | " + publisher + " | " + year
+                + " | Quantity: " + quantity
+                + " | Sale: $" + sale_price
+                + " | Rent: $" + rent_price;
+    }
+
 }
