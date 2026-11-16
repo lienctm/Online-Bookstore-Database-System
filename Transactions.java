@@ -2,27 +2,42 @@ import java.util.*;
 
 public class Transactions {
 
+    // Check if user exists
     public boolean isUser(String username) {
         System.out.print("\nTesting username");
         // TODO
         return true; // testing
     }
 
+    // Order a book
     public void orderBook(String username, Scanner scanner) {
         System.out.println("\n---+--+-- Ordering --+--+---");
         // TODO
     }
 
+    // Rent a book
     public void rentalBook(String username, Scanner scanner) {
         System.out.println("\n---+--+-- Renting --+--+---");
         // TODO
     }
 
+    // View all books in the system
     public void viewTables(String username) {
-        System.out.println("\n---+--+-- List of books --+--+---");
-        // TODO
+        System.out.println("\n---+--+-- List of books --+--+---\n");
+        BookstoreDAO dao = new BookstoreDAO();
+        List<Book> books = dao.getBooks();
+
+        if (books.isEmpty()) {
+            System.out.println("No books found.");
+            return;
+        }
+
+        for (Book book : books) {
+            System.out.println(book);
+        }
     }
 
+    // Insert data into the system
     public void insertData(String username, Scanner scanner) {
         System.out.println("\n---+--+-- Insert new book --+--+---");
         System.out.print("Title: ");
@@ -57,6 +72,7 @@ public class Transactions {
 
     }
 
+    // Delete data in the system
     public void deleteData(String username, Scanner scanner) {
         System.out.print("Enter bookID to delete: ");
         int bookID = scanner.nextInt();
@@ -71,6 +87,7 @@ public class Transactions {
 
     }
 
+    // Update data in the system
     public void updateData(String username, Scanner scanner) {
         System.out.print("Enter Book ID to update quantity: ");
         int bookID = scanner.nextInt();
